@@ -31,6 +31,12 @@ const getSimplifiedExif = (exif: any) => {
  * @returns
  */
 const getPhotos = async (): Promise<Photo[]> => {
+  // Check if S3 is configured
+  if (!process.env.AWS_REGION || !process.env.AWS_BUCKET) {
+    console.log("S3 not configured, returning empty photos array");
+    return [];
+  }
+
   try {
     let cachedPhotos = await readFromCache("photos");
     if (cachedPhotos && cachedPhotos.length > 0) {
@@ -91,6 +97,12 @@ const getPhotos = async (): Promise<Photo[]> => {
  * @returns
  */
 const getAlbums = async (): Promise<Album[] | []> => {
+  // Check if S3 is configured
+  if (!process.env.AWS_REGION || !process.env.AWS_BUCKET) {
+    console.log("S3 not configured, returning empty albums array");
+    return [];
+  }
+
   try {
     let cachedAlbums = await readFromCache("albums");
     if (cachedAlbums && cachedAlbums.length > 0) {

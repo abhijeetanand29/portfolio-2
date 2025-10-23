@@ -41,24 +41,21 @@ const HomePage = async () => {
           <section className="w-full md:w-5/12">
             <img
               className="m-0 block h-full w-full object-cover p-0"
-              src="https://cdn.timmyomahony.com/timmy-omahony.jpg"
-              alt="Timmy O'Mahony profile picture"
+              src="https://via.placeholder.com/600x800?text=Abhijeet+Anand"
+              alt="Abhijeet Anand profile picture"
             />
           </section>
           <section className="flex w-full flex-col justify-end pb-8 pt-8 md:w-6/12 md:pb-0 md:pt-12 lg:pt-16">
             <h1 className="heading-1">
-              I&apos;m Timmy, an independent software developer from Ireland.
+              I&apos;m Abhijeet Anand, a Data Scientist at Zepto.
             </h1>
             <p className="body-0 mt-5 xl:mt-8 2xl:mt-10">
-              I run a few of my own{" "}
+              I build machine learning solutions at scale, from{" "}
               <Link className="font-medium hover:underline" href="/projects/">
-                software businesses
+                reinforcement learning systems
               </Link>{" "}
-              while also{" "}
-              <Link className="font-medium hover:underline" href="/advisory/">
-                helping companies
-              </Link>{" "}
-              get their own products and ideas off the ground. Read a bit more{" "}
+              to predictive models that drive business impact. Fast-tracked to Data Scientist II in 9 months, I leverage{" "}
+              <strong>PySpark, ML, and Large-scale System Design</strong> to solve real-world problems. Read more{" "}
               <Link className="font-medium hover:underline" href="/about/">
                 about me
               </Link>
@@ -72,46 +69,51 @@ const HomePage = async () => {
           <div className="rounded-sm border border-black bg-black px-4 pb-3 pt-3 font-ibm text-xs text-beige">
             <p className="flex items-center justify-center gap-2 tracking-wider">
               <span>
-                <span className="font-medium">Looking for a portfolio?</span>{" "}
-                The code for this website is open source.{" "}
+                <span className="font-medium">Data Scientist Portfolio</span>{" "}
+                Building ML solutions that drive business impact.{" "}
                 <Link
                   className="text-ruby underline"
-                  target="_blank"
-                  href={config.repoUrl}
+                  href="/about/"
                 >
-                  View on Github
+                  Learn More
                 </Link>{" "}
               </span>
             </p>
           </div>
         </section>
         {/* Projects */}
-        <section className="border-t border-t-black py-8 lg:py-16 xl:py-20">
-          <LatestEntriesGrid
-            entries={featuredProjects}
-            title="Featured Projects"
-            urlPrefix="/projects"
-            linkText="See All Projects"
-          />
-        </section>
+        {featuredProjects.length > 0 && (
+          <section className="border-t border-t-black py-8 lg:py-16 xl:py-20">
+            <LatestEntriesGrid
+              entries={featuredProjects}
+              title="Featured Projects"
+              urlPrefix="/projects"
+              linkText="See All Projects"
+            />
+          </section>
+        )}
         {/* Photos */}
-        <section className="border-t border-t-black py-8 lg:py-16 xl:py-20">
-          <LatestPhotosGrid
-            photos={latestPhotos}
-            title="Recent Photos"
-            linkUrl="/photos/albums"
-            linkText="See All Photos"
-          />
-        </section>
+        {latestPhotos.length > 0 && (
+          <section className="border-t border-t-black py-8 lg:py-16 xl:py-20">
+            <LatestPhotosGrid
+              photos={latestPhotos}
+              title="Recent Photos"
+              linkUrl="/photos/albums"
+              linkText="See All Photos"
+            />
+          </section>
+        )}
         {/* Entries */}
-        <section className="border-t border-t-black py-8 lg:py-16 xl:py-20">
-          <LatestEntriesList
-            entries={latestPosts}
-            title="Latest Posts"
-            urlPrefix="/blog"
-            linkText="See All Posts"
-          />
-        </section>
+        {latestPosts.length > 0 && (
+          <section className="border-t border-t-black py-8 lg:py-16 xl:py-20">
+            <LatestEntriesList
+              entries={latestPosts}
+              title="Latest Posts"
+              urlPrefix="/blog"
+              linkText="See All Posts"
+            />
+          </section>
+        )}
       </Container>
     </Page>
   );

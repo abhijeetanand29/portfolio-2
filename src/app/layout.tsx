@@ -74,7 +74,7 @@ const generateMetadata = async () => {
     metadataBase: new URL(config.url),
     title: {
       template: `%s | ${config.name}`,
-      default: `I'm Timmy O'Mahony, an independent software developer from Dublin, Ireland.`,
+      default: `Abhijeet Anand - Data Scientist at Zepto | IIT Roorkee`,
     },
     twitter: {
       card: "summary_large_image",
@@ -85,7 +85,7 @@ const generateMetadata = async () => {
       title: config.byline,
       description: config.byline,
       siteName: config.name,
-      locale: "en-IE",
+      locale: "en-IN",
     },
     authors: [{ name: config.name, url: config.url }],
     creator: config.name,
