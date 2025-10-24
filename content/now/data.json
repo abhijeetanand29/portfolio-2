@@ -1,0 +1,21 @@
+[
+  {
+    "category": "Work",
+    "title": "Building ML Solutions at Zepto",
+    "description": "Leading data science initiatives including reinforcement learning for pricing, NER models for search, and user segmentation models.",
+    "status": "active"
+  },
+  {
+    "category": "Learning",
+    "title": "Advanced Machine Learning",
+    "description": "Deepening expertise in Causal ML, Bayesian methods, and large-scale distributed systems.",
+    "status": "active"
+  },
+  {
+    "category": "Projects",
+    "title": "Portfolio Website",
+    "description": "Building and maintaining my professional portfolio to showcase my work and achievements.",
+    "status": "active"
+  }
+]
+

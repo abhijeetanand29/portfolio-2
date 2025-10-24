@@ -5,7 +5,7 @@
 
 # Content and git modules config
 .gitmodules
-content/
+# content/  # Commented out to allow content to be committed
 
 # Dynamically generated
 public/robots.txt
@@ -48,3 +48,6 @@ next-env.d.ts
 
 # vscode
 .vscode
+
+# Local Netlify folder
+.netlify
